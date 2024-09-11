@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    char str[]="babad";
+    int max=0;
+    for(int i=0;i<5;i++)
+    {
+        for(int j=i+1;j<5;j++)
+        {
+            int v=j;
+            int count=0;
+            for(int k=i;k<=j;k++)
+            {
+                if(str[k]==str[v--])
+                {
+                    count++;
+                }
+            }
+            if(count==j+1-i && max<count)
+            {
+                for(int d=i;d<=j;d++)
+                {
+                    printf("%c",str[d]);
+                }
+                printf("\n");
+                max=count;
+            }
+        }
+    }
+}
